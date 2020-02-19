@@ -2,7 +2,7 @@
 
 const links = document.querySelector('.logo-heading')
 
-links.addEventListener('mouseover',()=>{
+links.addEventListener('mouseenter',()=>{
   links.style.transform = "scale(1.25)";
   links.style.transition = "all 0.3s";
 }
@@ -19,7 +19,6 @@ links.addEventListener('mouseleave',()=>{
 const body1 = document.querySelector('body');
   body1.addEventListener('click',(event)=> {
     body1.style.backgroundColor = 'hotpink';
-
   }
 )
 
@@ -29,7 +28,7 @@ const body1 = document.querySelector('body');
 let bottomContent = document.querySelector('.content-pick')
   bottomContent.addEventListener( 'dblclick',(event) =>{
     bottomContent.style.backgroundColor ='papayawhip';
-    // event.stopPropagation();
+    event.stopPropagation();
 
   }
   )
@@ -46,21 +45,22 @@ let bottomContent = document.querySelector('.content-pick')
 
 
 let footer = document.querySelector('footer');
-footer.addEventListener("mouseenter", (event)=> {
+footer.addEventListener("mouseover", (event)=> {
   event.target.style.cssText = " border: 3px dashed green"; 
 }
 )
 
 
 footer.addEventListener('mouseout', (event) =>{
-  event.target.style.backgroundColor = 'purple';
+  event.target.style.cssText = "background-color:pink;font-size:55px;border:2px dashed green;color:white;"
 }
 );
-// cssText = "color: blue; border: 1px solid black"; 
 
 
-let stop = document.querySelectorAll('nav-link')
+
+let stop = document.querySelectorAll('.nav-link')
 stop.addEventListener('resize',(event)=>{
-  event.target.style.cssText = "background-color:pink;font-size:55px;border:2px dashed green;color:white;"
-  event.preventDefault()
+  event.target.textContent='CLIKE ME!';
+  event.preventDefault();
 })
+
